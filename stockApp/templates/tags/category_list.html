@@ -1,0 +1,13 @@
+<h4>Categories</h4>
+<p class='text-muted'>List of all categories
+    <ul class="list-group">
+        {%if category%}
+        {%for c in category%}
+        <li class="list-group-item list-group-item-light"><a href="{% url 'show-category' c.slug %}">{{c.name|capfirst}}</a> </li>
+        {%endfor%}
+        {%endif%}
+        
+        
+    </ul>
+</p>
+

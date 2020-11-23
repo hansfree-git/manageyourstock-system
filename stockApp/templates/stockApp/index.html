@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block content%}
+
+{%include 'tags/status.html'%}
+
+<div class="jumbotron">
+  <h1 class="display-4">Hello, {{request.user|capfirst}}!</h1>
+  <p class="lead">This is a simple Stock Management App, that allows you to manage your inventory and keep proper records devoid of human errors.</p>
+  <hr class="my-4">
+  <p>It has features for adding stock, issuing, receiving and setting up re-order level</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'catalog-list' %}" role="button">Learn more</a>
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{%endblock%}

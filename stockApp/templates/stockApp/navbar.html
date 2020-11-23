@@ -1,0 +1,51 @@
+{%load static%}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+       <!--is_staff means user is an admin!-->
+       
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home-page' %}">Home </a>
+          </li>
+          {%if user.is_authenticated%} 
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'catalog-list' %}">Products Catalog</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add-category' %}">Add Category</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add-item' %}">Add Product</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'item-history' %}">Stock History</a>
+          </li>
+        {%endif%}  
+          
+      
+         
+    </ul>
+    {%if user.is_authenticated%}
+      <div class="navbar-nav ml-auto">
+        <a class="nav-link nav-item" id="nav-login" href="">Welcome {{request.user|capfirst }}</a>
+        <a class="nav-link nav-item" id="logout-link" href="{% url 'logoutPage' %}">Logout</a>
+      </div>
+
+      {%else%}
+      <div class="navbar-nav ml-auto">
+        <a class="nav-link nav-item" id="nav-login" href="{% url 'register' %}">Register</a>
+        <a class="nav-link nav-item" id="logout-link" href="{% url 'loginPage' %}">Login</a>
+      </div>
+
+    {%endif%}
+ </div>
+
+
+</nav>

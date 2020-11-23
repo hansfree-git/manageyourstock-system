@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<br>
+<div class="row">
+	<div class="col-6">
+		<div class="card card-body">
+			<form action="{% url 'delete-item' item.slug %}" method="POST">
+				{%csrf_token%}
+			<p>Are you sure you want to delete "{{item}} ?"</p>
+				<a class="btn btn-warning" href="{% url 'catalog-list' %}">Cancel</a>
+				<input type="submit" class="btn btn-danger" value="Yes delete">
+			</form>
+
+		</div>
+	</div>
+</div>
+
+{%endblock%}

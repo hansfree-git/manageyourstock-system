@@ -1,0 +1,63 @@
+{%extends 'base2.html'%}
+{%block content%}
+
+<br>
+
+
+<h5>Recent list of stock Modified</h5>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            
+            <table class="table">
+                <tr>
+                	<th>SL No.</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Receive Quantity</th>
+                    <th>Receive By</th>
+                    <th>Issue Quantity</th>
+                    <th>Issue By</th>
+                    <th>Issue To</th>
+                    <th>Reorder Level</th>
+                    <th>Last Updated</th>	
+                </tr>
+
+                {%for item in stock_list%}
+                <tr>
+                	<td>{{page_objects.start_index|add:forloop.counter0 }}</td>
+                            
+                    <td><a href="{% url 'item-detail' item.slug%}">
+                            {{item.item_name|capfirst}}</a></td>
+
+                    <td>{{item.category|capfirst}}</td>
+
+                    <td>
+                    {%if item.quantity <= item.reorder_level%}
+                    <a class="btn btn-danger" href="{% url 're-order' item.slug%}">
+                        {{item.quantity}}</a>
+                    {%else%}
+                        {{item.quantity}}
+                    </td>
+                    {%endif%}
+                    <td>{{item.receive_quantity}}</td>
+                    <td>{{item.receive_by}}</td>
+                    <td>{{item.issue_quantity}}</td>
+                    <td>{{item.issue_by}}</td>
+                    <td>{{item.issue_to}}</td>
+                    <td>{{item.reorder_level}}</td>
+                    <td>{{item.last_updated}}</td>
+                    
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{%include 'tags/pagination.html'%}
+
+{%endblock%}

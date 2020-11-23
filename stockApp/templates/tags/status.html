@@ -1,0 +1,42 @@
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-stock">
+			  	<div class="card-header">
+			  		<h4 class="card-title">Total Categories</h4>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total_category}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-stock">
+			  	<div class="card-header">
+			  		<h4 class="card-title">Total Stock Items</h4>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{total_quantity}}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-stock">
+			  	<div class="card-header">
+			  		<h4 class="card-title">Stock Running Short</h4>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title"><a style="color:red;" href="{% url 'catalog-list' %}">{{reorder_items}}</a></h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%block content%}
+
+<h2 class="search-results">Search results: {{paginator.count}} {%if paginator.count > 1%} items found {%else%} item found {%endif%}</h2>
+
+{%include 'tags/stock_list.html'%}
+
+{%include 'tags/pagination.html'%}
+
+{%endblock%}

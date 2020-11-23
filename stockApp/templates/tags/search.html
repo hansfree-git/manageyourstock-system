@@ -1,0 +1,7 @@
+{%load crispy_forms_tags%}
+<h4>Search for stock</h4>
+<form method="post" action="{% url 'search-results' %}">
+  {%csrf_token%}
+  {{search_form|crispy}}
+<button class="btn btn-primary" type="submit">Search</button>
+</form>

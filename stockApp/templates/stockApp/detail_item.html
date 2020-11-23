@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+{%block content%}
+<br>
+
+<a href="{% url 'item-issue' item.slug%}" type="submit" class="btn btn-warning btn-md">Issue Item</a>
+<a href="{% url 'item-receive' item.slug%}" type="submit" class="btn btn-primary btn-md">Receive Item</a>
+
+<br/><br/>
+
+
+
+<div class="row">
+    <div class="col-md-9">
+        <div class="card card-body">
+            <table class="table">
+                <tr>
+
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Quantity In Store</th>
+                    
+                    <th>Reorder Level</th>
+                    <th>Last Updated</th>
+                
+                </tr>
+                
+                <tr>
+    
+                    <td>{{item.item_name|capfirst}}</td>
+                    <td>{{item.category|capfirst}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{%if item.quantity <= item.reorder_level%}
+                    <a class="btn btn-danger" href="{% url 're-order' item.slug%}">
+                        {{item.quantity}}</a>
+                    {%else%}
+                        {{item.quantity}}
+                    </td>
+                    {%endif%}</td>
+
+                    <td>{{item.last_updated}}</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</div>
+{%endblock%}

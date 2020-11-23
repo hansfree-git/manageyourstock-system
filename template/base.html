@@ -1,0 +1,67 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stock Management App</title>
+</head>
+  <!-- bootstrap css files-->
+  <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap-css/bootstrap.min.css'%}">
+  <!-- project css files-->
+	<link rel="stylesheet" type="text/css" href="{%static 'css/main.css'%}">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/register.css' %}">
+
+
+
+
+<body>
+	{%include 'stockApp/navbar.html'%}
+
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-9">
+          {%if messages%}
+            {%for message in messages%}
+            <div class="alert alert-{{message.tags}}">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+              {{message}}
+            </div>
+            {%endfor%}
+          {%endif%}
+
+         {%block content%}
+		{%endblock%}
+
+        </div>
+
+
+
+
+	
+    {%load catalog_tags%}
+
+    {%if request.user.is_authenticated%}
+    <div class="col-md-3">
+    	<div class="content-section">
+    		{%category_list%}
+    
+   			 {%search_box%}
+    	</div>
+    </div>
+    
+	
+	<hr>
+	{%footer_links%}
+	{%endif%}
+</body>
+</html>
+	
+	
+
+  
+
+	
+  <script type="text/javascript" src="{% static 'js/bootstrap-js/popper.min.js'%}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap-js/bootstrap.min.js'%}"></script>
+	
+	
