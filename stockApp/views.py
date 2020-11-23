@@ -28,9 +28,9 @@ def home(request, template_name='stockApp/index.html'):
 			total_q.append(item.quantity)
 			total_quantity=sum(total_q)
 
-		if item.quantity<=item.reorder_level:
-			re_order.append(item)
-			reorder_items=len(re_order)
+			if item.quantity<=item.reorder_level:
+				re_order.append(item)
+				reorder_items=len(re_order)
 	except:
 		pass
 
