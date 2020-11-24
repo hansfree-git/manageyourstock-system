@@ -19,6 +19,10 @@ ul {
   margin: 0;
 }
 
+p.lead{
+  color: green !important;
+}
+
 .content-section {
   background: #ffffff;
   padding: 5px 10px;
@@ -81,13 +85,18 @@ i{
 
 
 /*for mobile phones and small screens*/
-@media screen and (min-width:320px) and (max-width:720px)  {
+@media screen and (min-width:320px) and (max-width:600px)  {
   body{
-    overflow-x: hidden;
+    
     width:100%;
+    height: 100%;
+    font-size: 18px;
 
   }
 
+  h1.display-4{
+    font-size: 180% !important;
+  }
   
   .btn-primary {
     width: 100%;
@@ -156,179 +165,7 @@ td:nth-of-type(8):before { content: "Last updated"; }
   }
   
 }
-@media (max-width: 320px){
-  .main-banner, .banner {
-    min-height: 175px;
-  }
-  .logo {
-    float: left;
-    width: 45%;
-    margin-top: 5%;
-  }
-  .header-right {
-    width: 55%;
-    text-align: right;
-  }
-  a.account {
-    font-size: 14px;
-    text-align: right;
-    float: none;
-    display: block;
-  }
-  span.active.uls-trigger, .btn-primary {
-    margin-top: 10px;
-    text-align: right;
-    float: none;
-    display: block;
-    margin-right:0;
-    width: 100%;
-  }
-  .selectregion {
-    float: none;
-  }
-  .select-box {
-    padding: 25px 15px;
-    margin: 35px 0;
-  }
-  .btn-group.bootstrap-select.show-tick button {
-    width: 93%;
-  }
-  .ads-list select, #custom-search-input {
-    width: 99.5%;
-  }
-  .banner h1 {
-    font-size: 22px;
-  }
-  .banner p {
-    font-size: 12.5px;
-  }
-  .search-hotel input[type="text"] {
-    width: 80%;
-  }
-  .featured-ad {
-    width: 100%;
-    margin: 2% 0%;
-  }
-  ul.location li:nth-child(2) {
-    width: 85%;
-  }
-  .footer-logo a:before {
-    width: 31%;
-  }
-  .footer-logo a:after {
-    width: 31%;
-  }
-  .pagination-sm>li>a, .pagination-sm>li>span {
-    padding: 5px 7px;
-    font-size: 10px;
-  }
-  .app-button {
-    width: 50%;
-  }
-  .app-button img {
-    width: 99%;
-  }
-  .app-left {
-    width: 75%;
-    margin-left: 12.5%; 
-  }
-  footer.diff {
-    padding: 0 15px;
-  }
-  .post-ad-form {
-    padding: 25px 15px;
-  }
-  span.total {
-    font-size: 11px;
-    padding: 8px 10px;
-  }
-  h2.head {
-    font-size: 27px;
-    margin: 22px 0;
-  }
-  .nav-tabs>li>a {
-    font-size: 16px;
-    padding: 10px 10px;
-  }
-  .interested h4 {
-    font-size: 17px;
-  }
-  .interested {
-    padding: 40px 0px;
-  }
-  .item-price:before {
-    left: 20.5%;
-    border-right-width: 37px;
-    top: -179px;
-  }
-  .single-page {
-    padding: 30px 0;
-  }
-  .product-desc {
-    margin-top: 20px;
-  }
-  .breadcrumb>li+li:before {
-    padding: 0 0px;
-  }
-  .breadcrumb>li {
-    font-size: 11.5px;
-  }
-  .ads-grid {
-    margin: 20px 0 30px 0;
-  }
-  .mpl {
-    width: 100%;
-    margin-left: 0;
-  }
-  .feed-back-form span {
-    font-size: 13px;
-  }
-  form#filldetails {
-    width: 100%;
-  }
-  #drop a {
-    padding: 8px 10px;
-    font-size: 14px;
-    letter-spacing: 0px;
-  }
-  .upload h3.tlt {
-    margin-top: 5px;
-    font-size: 20px;
-  }
-  form.submit input[type="submit"] {
-    padding: 6px 30px;
-    font-size: 16px;
-  }
-  .contact section {
-    margin: 30px auto 30px;
-  }
-  span.checkbox1 {
-    width: 70%;
-  }
-  .modal-lg {
-    width: 300px; 
-  }
-  .modal-content {
-    padding: 0px;
-  }
-  .modal-title {
-    font-size: 22px;
-  }
-  .modal-body {
-    padding: 20px 15px 5px;
-  }
-  .uls-wide {
-    min-width: 300px;
-  }
-  .panel-body p {
-    padding: 0;
-    margin-left: 5px;
-  }
-  input[type=file] {
-    width: 100%;
-  }
-  .category {
-    padding: 20px 0px;
-  }
+@media (max-width: 800){
+  
 }
 
